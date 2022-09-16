@@ -1,0 +1,117 @@
+Create database DROPS;
+
+use DROPS;
+
+CREATE TABLE `attacker` (
+  `user` text,
+  `fname` text,
+  `ownername` text,
+  `sk` text,
+  `type` text,
+  `dt` text
+);
+
+CREATE TABLE `cloud` (
+  `name` text,
+  `pass` text
+);
+
+INSERT INTO `cloud` VALUES ('cloud','cloud');
+
+CREATE TABLE `cloudserver` (
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct1` text,
+  `mac1` text,
+  `ct2` text,
+  `mac2` text,
+  `ct3` text,
+  `mac3` text,
+  `ct4` text,
+  `mac4` text,
+  `sk` text,
+  `dt` text
+);
+
+CREATE TABLE `deduplication` (
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct1` text,
+  `mac1` text,
+  `ct2` text,
+  `mac2` text,
+  `ct3` text,
+  `mac3` text,
+  `ct4` text,
+  `mac4` text,
+  `sk` text,
+  `dt` text
+);
+
+CREATE TABLE `owner` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text,
+  `pass` text,
+  `email` text,
+  `mobile` text,
+  `addr` text,
+  `dob` text,
+  `gender` text,
+  `pin` text,
+  `location` text,
+  `imagess` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `ownerfiles` (
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct1` text,
+  `mac1` text,
+  `ct2` text,
+  `mac2` text,
+  `ct3` text,
+  `mac3` text,
+  `ct4` text,
+  `mac4` text,
+  `sk` text,
+  `dt` text
+);
+
+CREATE TABLE `transaction` (
+  `id` int(11) NOT NULL auto_increment,
+  `user` text,
+  `fname` text,
+  `cname` text,
+  `sk` text,
+  `task` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text,
+  `pass` text,
+  `email` text,
+  `mobile` text,
+  `addr` text,
+  `dob` text,
+  `gender` text,
+  `pin` text,
+  `location` text,
+  `imagess` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `userrequest` (
+  `username` text,
+  `fnamereq` varchar(30) default NULL,
+  `reqdate` text,
+  `resdate` text,
+  `resstatus` text
+);
+
